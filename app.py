@@ -18,10 +18,10 @@ filtro_vendedor = st.sidebar.multiselect(
 if filtro_vendedor:
     df = df[df['Vendedor'].isin(filtro_vendedor)]
 
-aba1, aba2, aba3 = st.tabs(['Dataset', 'Receita', 'Vendedores'])
-with aba1:
+aba1, aba2, aba3 = st.tabs(['Receita', 'Vendedores', 'Dataset'])
+with aba3:
     st.dataframe(df)
-with aba2:
+with aba1:
     coluna1, coluna2 = st.columns(2)
     with coluna1:
         st.metric('Receita Total', format_number(df['Preço'].sum(), 'R$'))
@@ -32,7 +32,7 @@ with aba2:
         st.plotly_chart(chart_rec_mensal, use_container_widht=True)
         st.plotly_chart(chart_rec_categoria, use_container_widht=True)
 
-with aba3:
+with aba2:
     coluna1, coluna2 = st.columns(2)
     with coluna1:
         st.plotly_chart(chart_rec_vendedores)
