@@ -5,7 +5,7 @@ from utils import format_number
 from chart import chart_map_estado, chart_rec_mensal, chart_rec_estado, chart_rec_categoria, chart_rec_vendedores, chart_vendas_vendedores
 
 
-st.set_page_config(layout='wide')
+st.set_page_config(layout='wide', page_title="Gráficos", page_icon="📊")
 st.title("Dashboard de Vendas 🛒")
 
 st.sidebar.title('Filtro de Vendedores')
